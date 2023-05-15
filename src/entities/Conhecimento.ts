@@ -21,11 +21,11 @@ class Conhecimento {
 	@Column("blob")
 	foto: string;
 
-	@ManyToOne(() => Curso, (curso) => curso.idCurso, {nullable: true})
+	@ManyToOne(() => Curso, curso => curso.idCurso, {nullable: true})
 	curso: Curso;
 
-	@ManyToOne(() => Empresa, empresa => empresa.idEmpresa)
-	empresa: Empresa
+	// @ManyToOne(() => Empresa, empresa => empresa.idEmpresa)
+	// empresa: Empresa
 
 	@ManyToMany(() => Projeto, projeto => projeto.idProjeto)
 	@JoinTable()

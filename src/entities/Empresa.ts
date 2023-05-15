@@ -15,11 +15,11 @@ class Empresa {
 	@Column("blob")
 	foto: string;
 
-	@OneToMany(() => Conhecimento, conhecimento => conhecimento.idConhecimento)
-	conhecimentos: Conhecimento[];
+	// @OneToMany(() => Conhecimento, conhecimento => conhecimento.idConhecimento)
+	// conhecimentos: Conhecimento[];
 
-	@OneToMany(() => Atribuicao, atribuicao => atribuicao.idAtribuicao)
-	atribuicoes: Atribuicao[];
+	// @OneToMany(() => Atribuicao, atribuicao => atribuicao.idAtribuicao)
+	// atribuicoes: Atribuicao[];
 }
 
 export { Empresa };

@@ -24,8 +24,8 @@ class Atribuicao {
 	@ManyToOne(() => Funcao, funcao => funcao.idFuncao)
 	função: Funcao;
 
-	@ManyToOne(() => Empresa, empresa => empresa.idEmpresa)
-	empresa: Empresa;
+	// @ManyToOne(() => Empresa, empresa => empresa.idEmpresa)
+	// empresa: Empresa;
 }
 
 export { Atribuicao };

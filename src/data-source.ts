@@ -1,7 +1,4 @@
 import { DataSource } from "typeorm";
-
-import * as entities from "./entities";
-
 export const AppDataSource = new DataSource({
 	type: "mysql",
 	host: "containers-us-west-103.railway.app",
@@ -11,7 +8,7 @@ export const AppDataSource = new DataSource({
 	database: "railway",
 	synchronize: true,
 	logging: true,
-	entities: [...Object.values(entities)],
+	entities: ["src/entities/*.ts"],
 	subscribers: [],
 	migrations: [],
 });

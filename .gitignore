@@ -12,3 +12,10 @@
 
 node_modules/*
 package.json.lock
+
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/

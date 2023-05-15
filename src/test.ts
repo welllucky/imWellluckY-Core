@@ -1,7 +1,6 @@
 import { Curso } from "./entities/Curso";
 import "reflect-metadata";
-import { createConnection } from "typeorm";
-import { AppDataSource } from "./data-source";
+import { AppDataSource } from "./config/bd";
 
 export const testFunc = () => {
 	AppDataSource.initialize()

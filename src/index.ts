@@ -4,26 +4,24 @@ import { AppDataSource } from "./data-source";
 import { testFunc } from "./test";
 const port = process.env.PORT ?? 3000;
 
-testFunc();
+AppDataSource.initialize()
+	.then(() => {
+		// here you can start to work with your database
+	})
+	.catch(error => console.log(error));
 
-// AppDataSource.initialize()
-// 	.then(() => {
-// 		// here you can start to work with your database
-// 	})
-// 	.catch(error => console.log(error));
+app.get("/", (_req, res) => {
+  res.send("Apicação executando com sucesso!");
+});
 
-// app.get("/", (_req, res) => {
-//   res.send("Apicação executando com sucesso!");
-// });
+const server = app.listen(port, () => {
+  console.log(
+    `A aplicação está sendo executada na porta ${port}.\nAcesse http://localhost:${port}`
+  );
+});
 
-// const server = app.listen(port, () => {
-//   console.log(
-//     `A aplicação está sendo executada na porta ${port}.\nAcesse http://localhost:${port}`
-//   );
-// });
+process.on("SIGINT", () => {
+  server.close();
 
-// process.on("SIGINT", () => {
-//   server.close();
-
-//   console.log("Aplicação encerrada");
-// });
+  console.log("Aplicação encerrada");
+});

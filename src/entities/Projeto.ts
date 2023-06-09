@@ -23,8 +23,8 @@ class Projeto {
 	@Column("text")
 	conteudo: string;
 
-	@ManyToMany(() => Conhecimento, conhecimento => conhecimento.idConhecimento)
-	conhecimentos: Conhecimento[];
+	// @ManyToMany(() => Conhecimento, conhecimento => conhecimento.idConhecimento)
+	// conhecimentos: Conhecimento[];
 
 	@ManyToMany(() => Pessoa, pessoa => pessoa.idPessoa)
 	participantes: Pessoa[];

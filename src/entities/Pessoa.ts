@@ -10,13 +10,13 @@ class Pessoa {
 	@PrimaryGeneratedColumn()
 	idPessoa: number;
 
-	@Column({length: 64})
+	@Column({ length: 64 })
 	nome: string;
 
 	@Column()
 	dataNascimento: Date;
 
-	@Column("blob")
+	@Column("blob", { nullable: true })
 	foto: string;
 
 	@Column()
@@ -25,16 +25,13 @@ class Pessoa {
 	@Column()
 	sexo: string;
 
-	@OneToMany(() => RedeSocial, redeSocial => redeSocial.idRedeSocial)
-	redeSociais: RedeSocial[];
+	// @OneToMany(() => Contato, contanto => contanto.idContato, { nullable: true })
+	// contatos: Contato[];
 
-	@OneToMany(() => Contato, contanto => contanto.idContato)
-	contatos: Contato[];
+	// @OneToMany(() => Linkagem, linkagem => linkagem.idLinkagem)
+	// redesSociais: Linkagem[];
 
-	@OneToMany(() => Linkagem, linkagem => linkagem.idLinkagem)
-	redesSociais: Linkagem[];
-
-	@ManyToMany(() => Projeto, projeto => projeto.idProjeto)
+	@ManyToMany(() => Projeto, projeto => projeto.idProjeto, { nullable: true })
 	@JoinTable()
 	projetos: Projeto[];
 }

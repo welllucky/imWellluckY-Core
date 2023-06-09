@@ -1,9 +1,9 @@
 import * as express from "express";
 import * as cors from "cors";
 import * as logger from "morgan";
-import router from "./routes";
+import { router } from "./routes";
 
-import { AppDataSource } from "./config/bd";
+import AppDataSource from "./config/bd";
 
 const app = express();
 

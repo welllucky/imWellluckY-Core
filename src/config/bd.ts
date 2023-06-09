@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm";
 
-export const AppDataSource = new DataSource({
+const AppDataSource = new DataSource({
     type: "mysql",
     host: 'gateway01.us-east-1.prod.aws.tidbcloud.com',
     port: 4000,
@@ -9,12 +9,13 @@ export const AppDataSource = new DataSource({
     database: "test",
     synchronize: true,
     logging: true,
-    entities: ["src/entities/*.ts"],
+    entities: ["src/entities/Pessoa.ts", "src/entities/Projeto.ts"],
     subscribers: [],
     migrations: [],
     ssl: {
         minVersion: 'TLSv1.2',
-        rejectUnauthorized: true
+        rejectUnauthorized: false
     }
 });
 
+export default AppDataSource;
